@@ -43,10 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="planner.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="record.cs" />
-    <Compile Include="timeOnly.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
