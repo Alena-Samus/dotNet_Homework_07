@@ -204,7 +204,7 @@ namespace hwless7
                     }
                 case 3:
                     {
-                        Console.WriteLine("Введите новый срок");
+                        Console.WriteLine("Введите новый срок в днях");
                         int newTime = Convert.ToInt32(Console.ReadLine());
                         for (int i = 0; i < this.records.Length; i++)
                         {
@@ -254,10 +254,46 @@ namespace hwless7
             Array.Resize(ref this.records, this.records.Length - 1);
             Console.WriteLine("Запись удалена!");
         }
-
+        
+        /// <summary>
+        /// Метод для упорядочивания записей по выбранному полю
+        /// </summary>
         public void OrderByField()
         {
-            this.records = this.records.OrderBy(i => i.DoneDateTime).ToArray();
+            Console.WriteLine("Введите номер поля, по которуму будет произведено упорядочивание:\n1 - номер задания;\n2 - дата записи;\n3 - текст;\n4 - дата исполнения;\n5 - отметка о выполнении");
+            byte numberChoose = Convert.ToByte(Console.ReadLine());
+           
+            switch (numberChoose)
+            {
+                case 1:
+                    {
+                        this.records = this.records.OrderBy(i => i.Number).ToArray();
+                        break;
+                    }
+                case 2:
+                    {
+                        this.records = this.records.OrderBy(i => i.RecordDateTime).ToArray();
+                        break;
+                    }
+                case 3:
+                    {
+                        this.records = this.records.OrderBy(i => i.Message).ToArray();
+                        break;
+                    }
+                case 4:
+                    {
+
+                        this.records = this.records.OrderBy(i => i.DoneDateTime).ToArray();
+                        break;
+                    }
+                case 5:
+                    {
+                        this.records = this.records.OrderBy(i => i.Done).ToArray();
+                        break;
+                    }
+            }
+
+                
         }
 
     }

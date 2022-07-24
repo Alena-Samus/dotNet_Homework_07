@@ -62,7 +62,7 @@ namespace hwless7
         }
 
 
-         //Свойства полей
+         //Свойства полей для установки и возврата значений
         public int Number
         {
             get { return this.number; }
